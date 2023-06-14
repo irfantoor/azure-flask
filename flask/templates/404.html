@@ -1,0 +1,22 @@
+{% extends("base.html") %}
+
+{% block title %}Error404 | RecommendAI{% endblock %}
+
+{% block header %}
+    <h1 class="fw-light">Error 404</h1>
+{% endblock %}
+
+{% block content %}
+    <p>Les resources relier avec le liens n'existe pas.</p>
+
+    <h2>Les 5 articles au hazard</h2>
+    
+    <div class="row py-lg-1">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for article in articles: %}
+                {% include("article_card.html") %}
+            {% endfor %}
+        </div>
+    </div>
+    
+{% endblock %}

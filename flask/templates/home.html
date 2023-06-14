@@ -1,0 +1,37 @@
+{% extends("base.html") %}
+
+{% block title %}RecommendAI{% endblock %}
+
+{% block header %}
+    <h1 class="fw-light">RecommendAI</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8">
+            <h2 class="fw-light">Application Flask</h2>
+            
+            <p class="lead text-body-secondary">
+                Une application simple (Flask, Streamlit), complétée avec le système de recommandation 
+                en serverless qui recevra en entrée un identifiant utilisateur et retournera les 
+                recommandations d’articles associées (par exemple le top 5).
+            </p>
+
+            <div class="alert alert-primary" role="info">
+            <p>
+                <i><strong>Note</strong> : Les donées dans le sommaire sont directement prises par les
+                fichiers .csv créée pendant l'execution des scripts pour faire les mis-à-jour etc.</i>
+            </p>
+            </div>
+
+            <a href="/article" class="btn btn-primary my-2">Les Articles</a>
+            <a href="/category" class="btn btn-secondary my-2">Les Categories</a>
+            <a href="/user" class="btn btn-secondary my-2">User</a>
+            </p>
+        </div>
+        <div class="col-lg-6 col-md-4">
+            {% include("info.html") %}
+        </div>
+    </div>
+    
+{% endblock %}

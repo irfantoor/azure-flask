@@ -1,0 +1,37 @@
+{% extends("base.html") %}
+
+{% block title %}Recommendation pour un utilisateur | RecommendAI{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <p class="lead text-body-secondary">
+                <form class="d-flex" role="search" method="post" action="/user">
+                <input name="user_id" class="form-control me-2" type="text" placeholder="Enter user_id" aria-label="User">
+                <button class="btn btn-primary" type="submit">Submit</button>
+                </form>  
+            </p>
+        </div>
+    </div>
+  
+    {% if blocks: %}
+        <h2>Group d'utilisateur :</h2>
+        {% for i in blocks: %}
+            <span><a href="/user?block={{i}}">{{i}}</a></span>
+        {% endfor %}
+        <hr />
+        <h3>Utilisateur dans le group {{block}}:</h3>
+        {% for uid in users: %}
+            <span><a href="/user/{{uid}}">{{uid}}</a></span>
+        {% endfor %}
+    {% else: %}
+        <h2>Utilisateur-{{user_id}}</h2>
+
+        <hr />
+        {% include("user/recommended_articles.html") %}
+
+        <hr />
+        {% include("user/recent_articles.html") %}
+    {% endif %}
+
+{% endblock %}

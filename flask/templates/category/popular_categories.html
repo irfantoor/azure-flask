@@ -1,0 +1,19 @@
+<h2 class="pt-5">Les catégories plus consultées</h2>
+
+<div class="alert alert-primary" role="info">
+<p>
+    Les catégories recommendées ici sont des catégories les plus visitées par les utilisateurs.
+</p>
+
+<p>
+    La recommendation est basé sur <strong>Collaborative Filtering</strong>.
+</p>
+</div>
+
+<div class="row py-1">
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-3">
+    {% for category in popular_categories: %}
+        {% include("category/card.html") %}
+    {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<h2 class="pt-5">Les articles recommendés</h2>
+
+<div class="alert alert-primary" role="info">
+<p>
+    Les articles recommendés sont calculer basé sur la historique récente de cet utilisateur.
+</p>
+
+<p>
+    C'est une <strong>Content-Based</strong> recommendation utilisant 5 articles les plus
+    proches des articles, récemment consultés par cet utilisateur.
+</p>
+</div>
+
+<div class="row py-1">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    {% for article in recommended_articles: %}
+        {% include("article/card.html") %}
+    {% endfor %}
+    </div>
+</div>

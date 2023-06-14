@@ -1,0 +1,21 @@
+<h2 class="pt-5">Les articles récemment consultés</h2>
+
+<div class="alert alert-primary" role="info">
+<p>
+    Les articles récement cliqués par cet utilisateur. Une extraction
+    à été faite a partir de user_interactions.csv utilisant le timestamp.
+</p>
+
+<p>
+    Ce n'est pas une recommendation mais plutôt une <strong>historique récente</strong>,
+    utilisé pour faire les recommendation personelle.
+</p>
+</div>
+
+<div class="row py-1">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    {% for article in recent_articles: %}
+        {% include("article/card.html") %}
+    {% endfor %}
+    </div>
+</div>

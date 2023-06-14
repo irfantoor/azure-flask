@@ -1,0 +1,21 @@
+<div class="col">
+    <div class="card shadow-sm">
+      <div class="card-header">
+        <h4>Sommaire</h4>
+      </div>
+      <div class="card-body">
+        <table class="w-100 small">
+            <tr><th>Les Articles</th><td>{{summary.n_items}}</td></tr>
+            <tr><th>Les Categories</th><td>{{summary.n_groups}}</td></tr>
+            <tr><th>Les Features</th><td>{{summary.n_features}}</td></tr>
+            
+            <tr><td colspan="2"><hr></td></tr>
+            
+            <tr><th>Les Utilisateurs</th><td>{{summary.n_users}}</td></tr>
+            <tr><th>Les Articles cliqués</th><td>{{summary.n_clicked_items}} ({{summary.n_clicked_items_percent}})</td></tr>
+              <tr><th>Les Catégories cliqués</th><td>{{summary.n_clicked_groups}}  ({{summary.n_clicked_groups_percent}})</td></tr>
+        </table>
+      </div>
+    </div>
+</div>
+

@@ -1,0 +1,44 @@
+<div class="col">
+    <div class="card shadow-sm">
+      <div class="card-body bg-black">
+        <div class="grid row">
+          <div class="subgrid1">
+              <img src="{{category.images[0]}}" alt="Image 1">
+          </div>
+          <div class="subgrid2">
+              <img src="{{category.images[1]}}" alt="Image 2">
+          </div>
+          <div class="subgrid3">
+              <img src="{{category.images[2]}}" alt="Image 3">
+              <img src="{{category.images[3]}}" alt="Image 4">
+              <img src="{{category.images[4]}}" alt="Image 5">
+          </div>
+        </div>
+      </div>
+      
+      <div class="card-body">
+        <h4>category : {{category.id}}</h4>
+        <p class="card-text">Its a nice category ...</p>
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="btn-group">
+            <a type="button" class="btn btn-sm btn-outline-secondary" href="/category/{{category.id}}">Visitz la catégorie</a>
+            <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
+          </div>
+          <small class="text-body-secondary">{{category.article_count}} articles</small>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <table class="w-100 small">
+            <tr>
+                <td>
+                  <i class="bi bi-bar-chart-line-fill"></i> {{category.likes}}
+                </td>
+                <td style="text-align:right">
+                  {% for i in range(category.rating): %}<i class="bi bi-star"></i>{% endfor %}
+                </td>
+            </tr>
+        </table>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<h2 class="pt-5">Les catégories au hasard</h2>
+
+<div class="alert alert-primary" role="info">
+<p>
+    Les catégories recommendés ici sont choisi au hasard entre toutes les catégories present, 
+    sans aucune priorités ou poid attribués aux catégories ou aux articles.
+</p>
+
+<p>
+    Recommendation est basé sur un <strong>hasard</strong> (tout a été laissé au hasard ;-)
+</p>
+</div>
+
+<div class="row py-1">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    {% for category in random_categories: %}
+        {% include("category/card.html") %}
+    {% endfor %}
+    </div>
+</div>

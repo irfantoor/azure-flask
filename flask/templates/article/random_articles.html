@@ -1,0 +1,20 @@
+<h2 class="pt-5">Les articles au hasard</h2>
+
+<div class="alert alert-primary" role="info">
+<p>
+    Les articles recommendés ici sont choisi au hasard entre toutes les articles present, 
+    sans aucune priorités ou poid attribué aux catégories ou aux articles.
+</p>
+
+<p>
+    Recommendation est basé sur un <strong>hasard</strong> (le hasard fait bien les choses ;-)
+</p>
+</div>
+
+<div class="row py-1">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    {% for article in random_articles: %}
+        {% include("article/card.html") %}
+    {% endfor %}
+    </div>
+</div>

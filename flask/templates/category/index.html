@@ -1,0 +1,39 @@
+{% extends("base.html") %}
+
+{% block title %}Categories | RecommendAI{% endblock %}
+
+{% block header %}
+  <h1 class="fw-light">RecommendAI : Category</h1>
+{% endblock %}
+
+{% block content %}
+<div class="row py-2">
+  <div class="col-lg-6 col-md-8 mx-auto">
+      <p class="lead text-body-secondary">
+
+      <form class="d-flex" role="search" method="post" action="/category">
+        <input name="category_id" class="form-control me-2" type="category" placeholder="Enter category_id" aria-label="Category">
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+
+      </p>
+  </div>
+</div>
+
+{% if recent_articles: %}
+  <hr />
+  {% include("category/recent_articles.html") %}
+{% endif %}
+
+{% if popular_articles: %}
+  <hr />
+  {% include("category/popular_articles.html") %}
+{% endif %}
+
+<hr />
+{% include("category/popular_categories.html") %}
+
+<hr />
+{% include("category/random_categories.html") %}
+
+{% endblock %}

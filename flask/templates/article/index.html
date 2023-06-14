@@ -1,0 +1,34 @@
+{% extends("base.html") %}
+
+{% block title %}Les articles plus cliqués | RecommendAI{% endblock %}
+
+{% block header %}
+    <h1 class="fw-light">RecommendAI</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="row py-2">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <p class="lead text-body-secondary">
+    
+            <form class="d-flex" role="search" method="post" action="/article">
+            <input name="article_id" class="form-control me-2" type="text" placeholder="Enter article_id" aria-label="Article">
+            <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+    
+            </p>
+        </div>
+    </div>
+  
+    {% if recommended_articles: %}
+        <hr />
+        {% include("article/recommended_articles.html") %}
+    {% endif %}
+    
+    <hr />
+    {% include("article/popular_articles.html") %}
+    
+    <hr />
+    {% include("article/random_articles.html") %}
+    
+{% endblock %}

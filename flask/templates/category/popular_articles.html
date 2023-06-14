@@ -1,0 +1,19 @@
+<h2 class="pt-5">Les article plus consultés dans : {{category_id}}</h2>
+
+<div class="alert alert-primary" role="info">
+<p>
+    Les articles recommendés ici sont des articles plus cliqués par les utilisateurs dans cet catégorie.
+</p>
+
+<p>
+    La recommendation est basé sur <strong>Collaborative Filtering</strong>.
+</p>
+</div>
+
+<div class="row py-1">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    {% for article in popular_articles: %}
+        {% include("article/card.html") %}
+    {% endfor %}
+    </div>
+</div>

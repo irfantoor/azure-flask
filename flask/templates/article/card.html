@@ -1,0 +1,28 @@
+<div class="col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3">
+    <div class="card shadow-sm">
+      <img src="{{article.image}}" />
+      <div class="card-body">
+        <h4>article_id : {{article.id}}</h4>
+        <p>category_id : <a href="/category/{{article.category_id}}">{{article.category_id}}</a></p>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="btn-group">
+            <a type="button" class="btn btn-sm btn-outline-dark" href="/article/{{article.id}}">Lisez l'article</a>
+            <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
+          </div>
+          <small class="text-body-secondary">{{article.time}} mins</small>
+        </div>
+      </div>
+      <div class="card-footer">
+        <table class="w-100 small">
+            <tr>
+                <td><i class="bi bi-chat"></i><span class="m-1">{{article.comments}}</span></td>
+                <td><i class="bi bi-repeat"></i> {{article.shares}}</td>
+                <td><i class="bi bi-heart"></i> {{article.likes}}</td>
+                <td><i class="bi bi-bar-chart-line-fill"></i> {{article.views}}</td>
+                <td><a href="/share/{{article.id}}"><i class="bi bi-upload"></i></a></td>
+            </tr>
+        </table>
+      </div>
+    </div>
+</div>
